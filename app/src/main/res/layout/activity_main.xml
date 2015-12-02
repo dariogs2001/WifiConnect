@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Search"
+                android:id="@+id/search_button"
+                android:layout_weight="3"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/wifi_spinner"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center">
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+            <com.example.dgonzalez.wificonnect.AppNumberPicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/buzz_picker"
+                android:measureWithLargestChild="false"
+                minValue="1"
+                maxValue="100"
+                setValue="90"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:clickable="false"
+                android:dividerPadding="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vibrate_check_box"
+                    android:text="Vibrate"
+                    android:checked="true"
+                    android:layout_marginBottom="10dp"
+                    android:saveEnabled="true"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start Ping"
+                    android:id="@+id/start_ping_button"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="End Ping"
+                    android:layout_weight="1"
+                    android:id="@+id/stop_ping_button"
+                    android:enabled="false"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="N/A"
+                android:textColor="#546FE8"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingTop="15dp"
+                android:id="@+id/signal_text_view"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="N/A"
+                android:textColor="#54BE56"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:id="@+id/date_text_view"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            style="@style/CardView_Main"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+                android:id="@+id/option1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:src="@mipmap/ic_launcher"
+                    style="@style/CardViewImage"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:padding="10dp"
+                    android:text="Option 1"
+                    style="@style/CardView_TextView"
+                    android:textSize="12dp"/>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            style="@style/CardView_Main"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:id="@+id/option2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:src="@mipmap/ic_launcher"
+                style="@style/CardViewImage"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:padding="10dp"
+                android:text="Option 2"
+                style="@style/CardView_TextView"
+                android:textSize="12dp"/>
+
+        </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                style="@style/CardView_Main"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:id="@+id/option3">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:src="@mipmap/ic_launcher"
+                    style="@style/CardViewImage"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:padding="10dp"
+                    android:text="Option 3"
+                    style="@style/CardView_TextView"
+                    android:textSize="12dp"/>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                style="@style/CardView_Main"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:id="@+id/option4">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:src="@mipmap/ic_launcher"
+                    style="@style/CardViewImage"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:padding="10dp"
+                    android:text="Option 4"
+                    style="@style/CardView_TextView"
+                    android:textSize="12dp"/>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                style="@style/CardView_Main"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:id="@+id/option5">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:src="@mipmap/ic_launcher"
+                    style="@style/CardViewImage"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:padding="10dp"
+                    android:text="Option 5"
+                    style="@style/CardView_TextView"
+                    android:textSize="12dp"/>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                style="@style/CardView_Main"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:id="@+id/option6">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:src="@mipmap/ic_launcher"
+                    style="@style/CardViewImage"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:padding="10dp"
+                    android:text="Option 6"
+                    style="@style/CardView_TextView"
+                    android:textSize="12dp"/>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+     </LinearLayout>
+    </ScrollView>
+</LinearLayout>
