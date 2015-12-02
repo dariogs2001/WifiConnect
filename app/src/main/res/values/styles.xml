@@ -22,6 +22,7 @@
     <style name="CardView_Main">
         <item name="android:background">@color/card_view_background</item>
         <item name="android:radius">20dp</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
     <style name="CardViewImage">
         <item name="android:paddingBottom">65dp</item>

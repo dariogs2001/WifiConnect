@@ -10,6 +10,7 @@ import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.text.format.Time;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,12 +22,19 @@ import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.squareup.otto.Subscribe;
+
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
     static final String STATE_BUZZ_LEVEL = "buzzLevel";
@@ -51,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
     List<ScanResult> wifiList;
     AlarmReceiver mAlarmReceiver;
     boolean isPing= false;
+    CardView option1;
+    CardView option2;
+    CardView option3;
+    CardView option4;
+    CardView option5;
+    CardView option6;
 
 
     @Override
@@ -134,6 +148,73 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {
                 Utils.VibrateBoolean = isChecked;
+            }
+        });
+
+
+        option1 = (CardView)findViewById(R.id.option1);
+        option2 = (CardView)findViewById(R.id.option2);
+        option3 = (CardView)findViewById(R.id.option3);
+        option4 = (CardView)findViewById(R.id.option4);
+        option5 = (CardView)findViewById(R.id.option5);
+        option6 = (CardView)findViewById(R.id.option6);
+
+        option1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+
+                AsyncHttpClient client = new AsyncHttpClient();
+                client.get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=2de143494c0b295cca9337e1e96b00e0", new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(final int statusCode, final Header[] headers, final byte[] responseBody) {
+                        String value = new String(responseBody);
+                        String value2 = value;
+                    }
+
+                    @Override
+                    public void onFailure(final int statusCode, final Header[] headers, final byte[] responseBody, final Throwable error) {
+
+                    }
+                });
+
+            }
+        });
+
+        option2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                AsyncHttpClient client = new AsyncHttpClient();
+                client.post("https://www.google.com", null, new JsonHttpResponseHandler(){
+
+                });
+            }
+        });
+
+        option3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+
+            }
+        });
+
+        option4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+
+            }
+        });
+
+        option5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+
+            }
+        });
+
+        option6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+
             }
         });
 
